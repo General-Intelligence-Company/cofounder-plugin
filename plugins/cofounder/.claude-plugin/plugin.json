@@ -1,0 +1,20 @@
+{
+  "name": "cofounder",
+  "displayName": "Cofounder",
+  "version": "0.1.6",
+  "description": "Build and run a company",
+  "author": {
+    "name": "General Intelligence Company",
+    "url": "https://cofounder.co"
+  },
+  "homepage": "https://cofounder.co",
+  "repository": "https://github.com/General-Intelligence-Company/cofounder-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "cofounder",
+    "agents",
+    "claude",
+    "mcp"
+  ],
+  "mcpServers": "./.mcp.claude.json"
+}

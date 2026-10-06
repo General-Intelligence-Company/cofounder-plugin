@@ -1,0 +1,48 @@
+{
+  "name": "cofounder",
+  "version": "0.1.6",
+  "description": "Use Cofounder to give your agent a foundation for running a company. It brings together shared business knowledge and tools for research, customer relationships, email, social publishing, brand creation, and company infrastructure.",
+  "author": {
+    "name": "General Intelligence Company",
+    "url": "https://cofounder.co"
+  },
+  "homepage": "https://cofounder.co",
+  "repository": "https://github.com/General-Intelligence-Company/cofounder-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "cofounder",
+    "agents",
+    "codex",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/get-started/SKILL.md"
+    }
+  },
+  "interface": {
+    "displayName": "Cofounder",
+    "shortDescription": "Build and run your company",
+    "longDescription": "Use Cofounder to give your agent a foundation for running a company. It brings together shared business knowledge and tools for research, customer relationships, email, social publishing, brand creation, and company infrastructure.",
+    "developerName": "General Intelligence Company",
+    "category": "Business & Operations",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://cofounder.co",
+    "supportURL": "https://cofounder.co/support",
+    "privacyPolicyURL": "https://cofounder.co/privacy-policy",
+    "termsOfServiceURL": "https://cofounder.co/terms",
+    "defaultPrompt": [
+      "Help me build my company with Cofounder."
+    ],
+    "brandColor": "#947122",
+    "brandColorDark": "#D9B85B",
+    "screenshots": [],
+    "logo": "./assets/directory-icon.png",
+    "composerIcon": "./assets/composer-icon.png"
+  }
+}

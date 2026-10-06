@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cofounder": {
+      "type": "http",
+      "url": "https://api.superoptimizers.cofounder.co/mcp/openai"
+    }
+  }
+}

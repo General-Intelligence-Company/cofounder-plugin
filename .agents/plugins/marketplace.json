@@ -1,0 +1,26 @@
+{
+  "name": "cofounder",
+  "interface": {
+    "displayName": "Cofounder"
+  },
+  "plugins": [
+    {
+      "name": "cofounder",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/General-Intelligence-Company/cofounder-plugin.git",
+        "path": "./plugins/cofounder",
+        "ref": "main"
+      },
+      "version": "0.1.6",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "interface": {
+        "displayName": "Cofounder"
+      }
+    }
+  ]
+}

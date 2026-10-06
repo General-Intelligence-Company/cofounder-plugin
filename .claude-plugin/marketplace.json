@@ -1,0 +1,17 @@
+{
+  "name": "cofounder",
+  "owner": {
+    "name": "General Intelligence Company",
+    "url": "https://cofounder.co"
+  },
+  "metadata": {
+    "description": "Cofounder plugin for Claude."
+  },
+  "plugins": [
+    {
+      "name": "cofounder",
+      "source": "./plugins/cofounder",
+      "category": "productivity"
+    }
+  ]
+}
