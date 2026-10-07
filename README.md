@@ -4,6 +4,10 @@ This repository is generated from the `production` plugin source in
 [Superoptimizers](https://github.com/General-Intelligence-Company/superoptimizers).
 Do not edit generated plugin files here; make changes in that source repository.
 
+This marketplace is private. Your GitHub account needs read access to this
+repository, and Git must be authenticated before installation. With the GitHub
+CLI, run `gh auth login` and `gh auth setup-git` before adding the marketplace.
+
 ## Install in Claude Code
 
 ```text

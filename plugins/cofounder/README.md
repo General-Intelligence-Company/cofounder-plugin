@@ -5,7 +5,7 @@ company knowledge, communications, customer records, and launch resources
 into the same conversation, then ask your agent to move the work forward.
 
 Your company keeps its context across tasks: a roadmap shows what comes next,
-the Library holds your documents and assets, and a shared event bus lets
+the Library holds your documents and assets, and a shared event log lets
 agents see what's happened and share progress.
 
 ## What you can do
@@ -16,7 +16,7 @@ agents see what's happened and share progress.
 - **Keep company knowledge in the Library.** Save business plans, research,
   product briefs, brand assets, and generated content. Search and read existing
   material, upload files, and update documents as your company develops.
-- **Coordinate through the shared event bus.** Read recent company activity
+- **Coordinate through the shared event log.** Read recent company activity
   and post decisions, progress, blockers, and links to finished work. Other
   agents working on the company can pick up those updates and use the same
   context.

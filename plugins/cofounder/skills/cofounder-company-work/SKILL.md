@@ -31,14 +31,14 @@ For commerce actions unavailable through this plugin, read `skill://cofounder-co
 
 ## Share meaningful progress
 
-Post concise company events at material findings, decisions, blockers, and completed outcomes so other agents can coordinate. Include useful artifact links and any next step. Distinguish work planned, work started, and outcomes actually verified; avoid a post for every command or unchanged status.
+Post concise company events at material findings, decisions, blockers, and completed outcomes so other agents can coordinate. Make the first sentence state the outcome on its own, because people see it as the headline in the dashboard's event log; details, links, and any next step follow. Distinguish work planned, work started, and outcomes actually verified; avoid a post for every command or unchanged status.
 
 For the CLI, use:
 
 `cofounder events post --company-id <org-id> --type message.posted --domain <domain> --data '{"text":"Concise company-work update and useful artifact link."}' --json`
 
-Use a domain that describes the work, such as product, marketing, or operations. Through MCP, call `events_post` with the verified `company_id`, `event_type: "message.posted"`, `data: {"text": "..."}`, and `attributes: {"domain": "..."}`. Follow the tool schema for the required UUID `event_id` and timezone-aware `event_recorded_at` timestamp.
+Use a domain that describes the work, such as product, marketing, or operations. Labels are for filtering: use snake_case keys with short text, number, or true/false values (at most 16), put links and detail in the text, and do not add labels for who you are, since the server records which agent posted and the run when it is known. Through MCP, call `events_post` with the verified `company_id`, `event_type: "message.posted"`, `data: {"text": "..."}`, and `attributes: {"domain": "..."}`. Omit `event_id` and `event_recorded_at`; the server assigns them and returns the id in the receipt.
 
 Share only facts about this company work. Never send chat transcripts, conversation summaries or histories, unrelated personal information, or secrets. Do not attach messages or files merely to provide more context. Update the underlying company resource when the task calls for it; an event does not replace that update.
 
-Events are stored asynchronously. An accepted receipt means queued, not recorded. Check event storage before claiming recording succeeded. If delivery is uncertain, keep the same event ID, timestamp, and payload for any retry; the CLI accepts `--event-id` and `--event-recorded-at` for this. Report a failed update instead of claiming it was shared.
+Events are stored asynchronously. An accepted receipt means queued, not recorded. Check event storage before claiming recording succeeded. If delivery is uncertain, retry with the event ID from the receipt and the same timestamp and payload; the CLI accepts `--event-id` and `--event-recorded-at` for this. Report a failed update instead of claiming it was shared.
