@@ -1,8 +1,12 @@
-<img src="plugins/cofounder/assets/directory-icon.png" alt="Cofounder sunflower" width="96" height="96">
+<p align="center">
+  <img src="plugins/cofounder/assets/directory-icon.png" alt="Cofounder sunflower" width="96" height="96">
+</p>
 
-# Cofounder Plugin
+<h1 align="center">Cofounder Plugin</h1>
 
-[cofounder.co](https://cofounder.co)
+<p align="center">
+  <a href="https://cofounder.co">cofounder.co</a>
+</p>
 
 Cofounder gives your AI agent a foundation for building and running a company:
 shared company knowledge, a roadmap, and tools for research, customer
