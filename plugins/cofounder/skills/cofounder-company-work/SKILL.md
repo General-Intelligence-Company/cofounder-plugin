@@ -41,4 +41,4 @@ Use a domain that describes the work, such as product, marketing, or operations.
 
 Share only facts about this company work. Never send chat transcripts, conversation summaries or histories, unrelated personal information, or secrets. Do not attach messages or files merely to provide more context. Update the underlying company resource when the task calls for it; an event does not replace that update.
 
-Events are stored asynchronously. An accepted receipt means queued, not recorded. Check event storage before claiming recording succeeded. If delivery is uncertain, retry with the event ID from the receipt and the same timestamp and payload; the CLI accepts `--event-id` and `--event-recorded-at` for this. Report a failed update instead of claiming it was shared.
+A successful post means the event is stored. If the response is lost, retry with the same event ID, timestamp, and payload; the CLI accepts `--event-id` and `--event-recorded-at` for this. Report a failed update instead of claiming it was shared.
