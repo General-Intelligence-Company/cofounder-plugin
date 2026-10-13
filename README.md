@@ -153,13 +153,12 @@ Cowork task to load updated components.
   `cofounder@cofounder`: plugin name first, marketplace name second.
 - **Command missing:** update your Codex or Claude Code client if it doesn't
   recognize the [CLI commands below](#install-from-the-command-line-for-agents).
-- **Tools unavailable:** confirm the plugin is enabled and Cofounder is
-  connected. In Claude Code, use `/mcp`; in the Claude app, use the plugin's
-  **Connectors** tab. Complete any outstanding sign-in or consent prompts.
-- **Tools unavailable / "onboarding_get isn't available":** Cofounder is
-  installed but not signed in. In Codex, open **Plugins > Cofounder** and choose
-  **Authenticate** (or run `codex mcp login`); in Claude, use `/mcp` or the
-  plugin's **Connectors** tab. Then start a new chat.
+- **Tools unavailable** (for example, "onboarding_get isn't available"): confirm
+  the plugin is enabled and Cofounder is signed in and connected. In Codex, open
+  **Plugins > Cofounder** and choose **Authenticate** (or run `codex mcp login`).
+  In Claude Code, use `/mcp`; in the Claude app, use the plugin's **Connectors**
+  tab. Complete any outstanding sign-in or consent prompts, then start a new
+  chat.
 - **Windows: "access denied", missing home directory, or `SEC_E_NO_CREDENTIALS`
   during install:** these come from the Codex sandbox, not the plugin. Install
   from the Plugins UI or run the commands in your own PowerShell window.
