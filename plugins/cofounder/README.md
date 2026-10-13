@@ -25,8 +25,8 @@ agents see what's happened and share progress.
 - **Set up and use company email.** Provision an inbox, use a verified company
   domain, read conversations, draft messages, and send or reply to email.
   Prepare and preview email campaigns before sending them to eligible contacts.
-- **Create content and brand assets.** Generate images and videos, develop a
-  brand kit from your direction, and save the results in the Library. Prepare
+- **Create content and brand assets.** Generate images and videos, check copy
+  against your brand, and save the results in the Library. Prepare
   social posts and publish or schedule them on connected accounts when you
   ask.
 - **Manage customers and research opportunities.** Keep accounts, contacts,
@@ -69,8 +69,8 @@ updates exclude chat transcripts, unrelated personal information, and secrets
 under the bundled guidance.
 
 When your host has a shell and local project access, requested work can also
-use the Cofounder CLI, filesystem, and Git. The bundle includes setup and
-company-work skills and a Claude company-status agent, with no install scripts,
+use the Cofounder CLI, filesystem, and Git. The bundle includes a small setup launcher, a core skill for company work,
+and a Claude company-status agent, with no install scripts,
 hooks, or local server process.
 
 ## Documentation and license

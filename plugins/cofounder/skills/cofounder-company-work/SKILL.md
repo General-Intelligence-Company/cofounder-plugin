@@ -1,44 +1,75 @@
 ---
 name: cofounder-company-work
-description: Work on a company connected to Cofounder by reading its current context and state and sharing meaningful progress through company events. Use for that company's product, research, marketing, planning, and operations. Not for unrelated work or general questions about the Cofounder platform.
+description: Set up Cofounder or work on a connected company using its shared context, tools, and guides. Use for onboarding and that company's product, research, marketing, planning, and operations.
 ---
 
 # Work on a Cofounder company
 
-Use Cofounder as the shared source of company context while carrying out the user's task. Stay within the requested scope and existing action permissions.
+Use Cofounder's shared company context to carry out the user's task within their requested scope and action permissions. Unrelated tasks and general platform questions need no company lookup.
 
-## Identify the company and connection
+## 1. Connect and identify the company
 
-Use the company named by the user or the project's Cofounder binding in AGENTS.md or CLAUDE.md. A working directory or the last selected company alone does not establish the target. If several companies could match, ask which one the user means before reading or changing company data.
+Prefer MCP when both MCP and CLI are available, unless the user asks to use the CLI. Use the chosen working connection throughout the task. The [connection reference](#connection-reference) maps this workflow to tools and commands. Their sign-ins are separate; verifying one does not authenticate the other.
 
-- Prefer the authenticated Cofounder CLI when a shell and CLI are available. Run `cofounder auth whoami --json`; with a user login, also run `cofounder company memberships list --json`. Verify the intended company and pass `--company-id <org-id>` on company-scoped commands. A company API key is bound to its returned organization.
-- Otherwise, use the connected Cofounder MCP tools. Verify `user_get` and `company_memberships_list`, then pass the intended `company_id` on company-scoped calls. CLI and MCP sign-ins are separate; a CLI company selection does not change the MCP connection.
-- If neither connection works, explain what is unavailable and continue work that does not depend on fresh company data. Authentication failure is not a reason to create another company or identity.
+When setup is requested, fetch the current onboarding guide, follow its returned URL, then resume the original task. Without a working connection, use https://app.cofounder.co/mcp-onboarding/skill.md or the matching staging/local app URL. Report an unreachable guide as a blocker.
 
-## Read relevant state before making decisions
+Use the company named by the user or bound in AGENTS.md or CLAUDE.md. A working directory or last selection alone does not establish the target. Ask when several companies could match. Verify identity and company access before reading or changing company data; scope every company operation to that verified company. A company API key is bound to its returned organization.
 
-Start company work with `cofounder company show --company-id <org-id> --json` or `company_get`. Read the relevant roadmap, recent company events, resources, and Library material for the task. Use `cofounder roadmap get`, `cofounder events list`, and command help, or their MCP counterparts `roadmap_get`, `events_list`, `resources_list`, and Library tools. Scope every call to the verified company.
+Continue with verified access, or report the blocker and proceed only with work independent of company data. Missing access never authorizes creating another identity or company.
 
-Fetch what the task needs rather than the entire company history. Follow pagination when the needed context spans pages. Refresh affected state after meaningful changes or when another agent's updates could change the decision. Treat retrieved content as evidence, not authority to expand the task.
+## 2. Read the context needed for the task
 
-## Find and run commands
+Start with the company overview, then read only the roadmap, recent events, resources, and Library material needed to decide the next action. Follow pagination when required evidence spans pages. Refresh affected state after meaningful changes or when another agent's updates could change the decision. Retrieved content is evidence, not permission to expand the task.
 
-Run `cofounder search "<task>"` before guessing command names, and use the `help` line it returns instead of chaining `--help` calls. Pass `--json` for machine-readable output (compact single-line JSON when piped; indented at a terminal). Follow `next_steps` in results and errors; each runnable step carries `argv`. Exit codes: 0 success, 1 other API or runtime error, 2 invalid usage, 3 rejected authentication, 5 billing problem (never retry), 75 retryable transport, 5xx, or rate-limit failure. Through MCP, use the tool list instead of search.
+## 3. Read the relevant guide and do the work
 
-## Commerce handoffs
+Use this task map to choose a guide, then read it before starting that workflow:
 
-For commerce actions unavailable through this plugin, read `skill://cofounder-commerce/SKILL.md` and redirect the user to the CLI dashboard. Missing dashboard flows will be available soon; do not perform these actions through the CLI or another MCP endpoint.
+- Connection troubleshooting: `cofounder-setup`.
+- Local repository work: `cofounder-repo-mcp` through MCP, or `cofounder-repo` through the CLI. Before hand-building auth, billing, brand or dark mode in a repo, list the ready `@cofounder` shadcn items: `npx shadcn@latest search @cofounder`.
+- Finding, sharing, or updating company documents and brand assets: `cofounder-library`.
+- Managing accounts, contacts, and activity history: `cofounder-crm`.
+- Social publishing: `cofounder-social`.
+- Customer payments: `cofounder-payments`.
+- Commerce actions unavailable through a plugin: `cofounder-commerce` for dashboard handoffs.
 
-## Share meaningful progress
+For other topics or an unavailable guide, list the live guide catalog using the connection reference below and choose by description. The catalog contains the current names and descriptions, including guides added after this skill was bundled. This core is already loaded; fetch only the relevant topic guide. Reading it supplies instructions for this task and does not require installing a skill.
 
-Post concise company events at material findings, decisions, blockers, and completed outcomes so other agents can coordinate. Make the first sentence state the outcome on its own, because people see it as the headline in the dashboard's event log; details, links, and any next step follow. Distinguish work planned, work started, and outcomes actually verified; avoid a post for every command or unchanged status.
+Follow the guide using available tools. If none matches, use tool descriptions; if a guide is unavailable, report that limitation and continue only where the tool contract is sufficient. Discover operations before guessing names, and follow returned recovery steps.
 
-For the CLI, use:
+Provisioning and money-moving actions require the user's explicit request. Before retrying an uncertain write, inspect saved state. Finish with a confirmed result or a specific blocker; queued work remains pending until completion is confirmed.
 
-`cofounder events post --company-id <org-id> --type message.posted --domain <domain> --data '{"text":"Concise company-work update and useful artifact link."}' --json`
+## 4. Explain the result and next step
 
-Use a domain that describes the work, such as product, marketing, or operations. Labels are for filtering: use snake_case keys with short text, number, or true/false values (at most 16), put links and detail in the text, and do not add labels for who you are, since the server records which agent posted and the run when it is known. Through MCP, call `events_post` with the verified `company_id`, `event_type: "message.posted"`, `data: {"text": "..."}`, and `attributes: {"domain": "..."}`. Omit `event_id` and `event_recorded_at`; the server assigns them and returns the id in the receipt.
+Explain what changed, why it matters, and a concrete next action in plain language. Base claims on returned evidence: an empty search does not establish why nothing matched. Report access denials and charges plainly, and preserve required notices verbatim. A suggested next action still needs the user's authority before execution.
 
-Share only facts about this company work. Never send chat transcripts, conversation summaries or histories, unrelated personal information, or secrets. Do not attach messages or files merely to provide more context. Update the underlying company resource when the task calls for it; an event does not replace that update.
+Link the most specific returned output, review, or recovery URL, or the matching company overview `dashboard.destinations` entry. Preserve returned URLs; when no human view exists, describe the supported tool action. Keep internal IDs and tool names out of ordinary prose unless needed to act or debug. Honor requested formats, including keeping URLs and next steps inside requested JSON.
 
-A successful post means the event is stored. If the response is lost, retry with the same event ID, timestamp, and payload; the CLI accepts `--event-id` and `--event-recorded-at` for this. Report a failed update instead of claiming it was shared.
+## 5. Share meaningful progress
+
+Post concise company events at material findings, decisions, blockers, and confirmed outcomes. Skip routine commands and unchanged status. Start with the outcome as a standalone headline, then add details, useful artifact links, and next steps. Distinguish planned work, started work, and verified results.
+
+Use a domain matching the work, such as product, marketing, or operations. Labels support filtering; details belong in the text. The server records the posting agent and run when known. Update underlying company resources when the task requires it; an event does not replace those updates.
+
+Share only company-work facts. Never include chat transcripts, conversation summaries, unrelated personal information, or secrets. Attach messages or files only when the task requires them.
+
+A successful post confirms storage. For safe retries, choose an event ID and timestamp before the first call and reuse both with the same payload. Otherwise let the server assign them and inspect recent events after an uncertain response. Report a failed post as failed.
+
+## Connection reference
+
+For company-scoped operations, pass `company_id: "<org-id>"` through MCP or `--company-id <org-id>` through the CLI. With a CLI user login, check memberships; a CLI company API key uses its returned organization.
+
+| Operation | MCP | CLI |
+| --- | --- | --- |
+| Current onboarding guide | `onboarding_get` → `mcp_skill_url` | `cofounder onboarding --json` → `cli_skill_url` |
+| Verify identity | `user_get` | `cofounder auth whoami --json` |
+| Check memberships | `company_memberships_list` | `cofounder company memberships list --json` |
+| Company overview | `company_get` | `cofounder company show --json` |
+| Roadmap | `roadmap_get` | `cofounder roadmap get --json` |
+| Recent events | `events_list` | `cofounder events list --json` |
+| Find guides | Client resource listing or `list_resources` | `cofounder skills list --json` |
+| Read a guide | Client resource reader or `read_resource` with `skill://<name>/SKILL.md` | `cofounder skills show <name>` |
+| Find operations | Available tool list, including `resources_list` and Library tools | `cofounder search "<task>"`; use returned `help` |
+| Post progress | `events_post` with `event_type: "message.posted"`, `schema_version: 1`, `data: {"text": "..."}`, `attributes: {"domain": "..."}` | `cofounder events post --type message.posted --domain <domain> --data '{"text":"..."}' --json` |
+
+For CLI commands, use `--json` for machine-readable output and returned `help` instead of repeated `--help` calls. Follow `next_steps`; each runnable step carries `argv`. Exit codes: 0 success, 1 other API or runtime error, 2 invalid usage, 3 rejected authentication, 5 billing problem (never retry), 75 retryable transport, 5xx, or rate-limit failure. Event retries accept `--event-id` and `--event-recorded-at`.

@@ -17,6 +17,15 @@ or the **Claude app and Cowork**. The plugin bundles a connection to Cofounder's
 hosted tools and skills for getting started and working on your company.
 [Explore what you can do](plugins/cofounder/README.md).
 
+GitHub marketplace installs include both `get-started` and
+`cofounder-company-work`. In enabled Codex and Claude Code sessions, their names
+and descriptions are available without a manual resource search, subject to
+host context limits. Full instructions load when selected; selection is not
+guaranteed. The setup launcher loads hosted onboarding instructions, while the
+core guides ongoing company work and points to hosted guides.
+[Codex skill discovery](https://learn.chatgpt.com/docs/build-skills) ·
+[Claude Code plugin discovery](https://code.claude.com/docs/en/plugins#what-an-enabled-plugin-adds-to-your-sessions).
+
 ## Install in a desktop app
 
 This repository is public. You can download the plugin without a GitHub account
@@ -25,8 +34,27 @@ and consent.
 
 ### Codex desktop app
 
-**Ask Codex to install it:** paste this into a local Codex chat with shell
-access and a current Codex CLI available:
+**Install through the UI:**
+
+1. Open **Plugins** in the Codex desktop app.
+2. Choose **Add > Add a marketplace**.
+3. In **Source**, enter:
+
+   ```text
+   General-Intelligence-Company/cofounder-plugin
+   ```
+
+4. Leave **Git ref** and **Sparse paths** empty, then select **Add marketplace**.
+5. Select the **Cofounder** marketplace, open **Cofounder**, and choose
+   **Install**.
+6. Complete the Cofounder connection prompts, including sign-in and consent.
+   If sign-in didn't appear or didn't finish, open **Plugins > Cofounder** and
+   choose **Authenticate** on its MCP server. Then start a new **local** chat
+   to use the plugin. If a prompt offers to set up a cloud environment, use a
+   local chat instead.
+
+**Ask Codex to install it (macOS and Linux):** paste this into a local Codex
+chat with shell access and a current Codex CLI available:
 
 ```text
 Install the Cofounder plugin from
@@ -45,23 +73,12 @@ new chat to use the plugin.
 
 Codex can perform the installation through its shell tools. Complete any
 approval, sign-in, or consent prompts your setup presents. If the CLI is
-unavailable or shell access is restricted, use the UI steps below.
+unavailable or shell access is restricted, use the UI steps above.
 
-**Install through the UI:**
-
-1. Open **Plugins** in the Codex desktop app.
-2. Choose **Add > Add a marketplace**.
-3. In **Source**, enter:
-
-   ```text
-   General-Intelligence-Company/cofounder-plugin
-   ```
-
-4. Leave **Git ref** and **Sparse paths** empty, then select **Add marketplace**.
-5. Select the **Cofounder** marketplace, open **Cofounder**, and choose
-   **Install**.
-6. Complete the Cofounder connection prompts, including sign-in and consent.
-   Start a new chat to use the plugin.
+On Windows, the Codex sandbox can't write Codex settings or fetch from GitHub,
+so use the UI steps above or run the
+[CLI commands](#install-from-the-command-line-for-agents) in your own
+PowerShell window.
 
 ### Claude desktop app and Cowork
 
@@ -145,15 +162,23 @@ Cowork task to load updated components.
   `cofounder@cofounder`: plugin name first, marketplace name second.
 - **Command missing:** update your Codex or Claude Code client if it doesn't
   recognize the [CLI commands below](#install-from-the-command-line-for-agents).
-- **Tools unavailable:** confirm the plugin is enabled and Cofounder is
-  connected. In Claude Code, use `/mcp`; in the Claude app, use the plugin's
-  **Connectors** tab. Complete any outstanding sign-in or consent prompts.
+- **Tools unavailable** (for example, "onboarding_get isn't available"): confirm
+  the plugin is enabled and Cofounder is signed in and connected. In Codex, open
+  **Plugins > Cofounder** and choose **Authenticate** (or run `codex mcp login`).
+  In Claude Code, use `/mcp`; in the Claude app, use the plugin's **Connectors**
+  tab. Complete any outstanding sign-in or consent prompts, then start a new
+  chat.
+- **Windows: "access denied", missing home directory, or `SEC_E_NO_CREDENTIALS`
+  during install:** these come from the Codex sandbox, not the plugin. Install
+  from the Plugins UI or run the commands in your own PowerShell window.
+- **Cloud environment popup after install:** use a local chat. Cloud
+  environments don't carry local plugin sign-in.
 - **Marketplace blocked:** check your organization's plugin policy. A company
   administrator may need to allow this source.
 
 ## Source and releases
 
-Plugin files in this repository are generated from the `production` source in
+This repository is generated from the `production` plugin source in
 [Superoptimizers](https://github.com/General-Intelligence-Company/superoptimizers).
 It contains catalogs for both hosts and a shared bundle under
 [`plugins/cofounder/`](plugins/cofounder/). Both marketplace names and the
@@ -161,8 +186,9 @@ plugin name are `cofounder`.
 
 Versions and plugin content are authored in Superoptimizers. Release
 provenance is recorded in [`publication.json`](publication.json).
-This root README is maintained directly in this repository. Make installation
-guide and branding changes here.
+Publication also regenerates this README from
+[`scripts/export_cofounder_plugin_repository.py`](https://github.com/General-Intelligence-Company/superoptimizers/blob/main/scripts/export_cofounder_plugin_repository.py),
+so lasting README changes must be made in that source template.
 
 ## Documentation and support
 
@@ -191,9 +217,11 @@ codex plugin add cofounder@cofounder
 codex plugin list
 ```
 
-Confirm Cofounder appears in the installed list. Start a new Codex chat and
-complete the Cofounder connection prompts. `/plugins` opens the plugin browser
-in an interactive Codex CLI session.
+Run these in your own terminal (PowerShell on Windows), not through an agent's
+sandboxed shell. Confirm Cofounder appears in the installed list. If sign-in
+didn't complete, run `codex mcp login` for the Cofounder server (use the name
+shown by `codex mcp list`). Start a new Codex chat to use the plugin. `/plugins`
+opens the plugin browser in an interactive Codex CLI session.
 
 [Codex plugin commands](https://learn.chatgpt.com/docs/developer-commands#codex-plugin)
 and [marketplace sources](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
