@@ -25,8 +25,27 @@ and consent.
 
 ### Codex desktop app
 
-**Ask Codex to install it:** paste this into a local Codex chat with shell
-access and a current Codex CLI available:
+**Install through the UI:**
+
+1. Open **Plugins** in the Codex desktop app.
+2. Choose **Add > Add a marketplace**.
+3. In **Source**, enter:
+
+   ```text
+   General-Intelligence-Company/cofounder-plugin
+   ```
+
+4. Leave **Git ref** and **Sparse paths** empty, then select **Add marketplace**.
+5. Select the **Cofounder** marketplace, open **Cofounder**, and choose
+   **Install**.
+6. Complete the Cofounder connection prompts, including sign-in and consent.
+   If sign-in didn't appear or didn't finish, open **Plugins > Cofounder** and
+   choose **Authenticate** on its MCP server. Then start a new **local** chat
+   to use the plugin. If a prompt offers to set up a cloud environment, use a
+   local chat instead.
+
+**Ask Codex to install it (macOS and Linux):** paste this into a local Codex
+chat with shell access and a current Codex CLI available:
 
 ```text
 Install the Cofounder plugin from
@@ -45,23 +64,12 @@ new chat to use the plugin.
 
 Codex can perform the installation through its shell tools. Complete any
 approval, sign-in, or consent prompts your setup presents. If the CLI is
-unavailable or shell access is restricted, use the UI steps below.
+unavailable or shell access is restricted, use the UI steps above.
 
-**Install through the UI:**
-
-1. Open **Plugins** in the Codex desktop app.
-2. Choose **Add > Add a marketplace**.
-3. In **Source**, enter:
-
-   ```text
-   General-Intelligence-Company/cofounder-plugin
-   ```
-
-4. Leave **Git ref** and **Sparse paths** empty, then select **Add marketplace**.
-5. Select the **Cofounder** marketplace, open **Cofounder**, and choose
-   **Install**.
-6. Complete the Cofounder connection prompts, including sign-in and consent.
-   Start a new chat to use the plugin.
+On Windows, the Codex sandbox can't write Codex settings or fetch from GitHub,
+so use the UI steps above or run the
+[CLI commands](#install-from-the-command-line-for-agents) in your own
+PowerShell window.
 
 ### Claude desktop app and Cowork
 
@@ -148,6 +156,15 @@ Cowork task to load updated components.
 - **Tools unavailable:** confirm the plugin is enabled and Cofounder is
   connected. In Claude Code, use `/mcp`; in the Claude app, use the plugin's
   **Connectors** tab. Complete any outstanding sign-in or consent prompts.
+- **Tools unavailable / "onboarding_get isn't available":** Cofounder is
+  installed but not signed in. In Codex, open **Plugins > Cofounder** and choose
+  **Authenticate** (or run `codex mcp login`); in Claude, use `/mcp` or the
+  plugin's **Connectors** tab. Then start a new chat.
+- **Windows: "access denied", missing home directory, or `SEC_E_NO_CREDENTIALS`
+  during install:** these come from the Codex sandbox, not the plugin. Install
+  from the Plugins UI or run the commands in your own PowerShell window.
+- **Cloud environment popup after install:** use a local chat. Cloud
+  environments don't carry local plugin sign-in.
 - **Marketplace blocked:** check your organization's plugin policy. A company
   administrator may need to allow this source.
 
@@ -191,9 +208,11 @@ codex plugin add cofounder@cofounder
 codex plugin list
 ```
 
-Confirm Cofounder appears in the installed list. Start a new Codex chat and
-complete the Cofounder connection prompts. `/plugins` opens the plugin browser
-in an interactive Codex CLI session.
+Run these in your own terminal (PowerShell on Windows), not through an agent's
+sandboxed shell. Confirm Cofounder appears in the installed list. If sign-in
+didn't complete, run `codex mcp login` for the Cofounder server (use the name
+shown by `codex mcp list`). Start a new Codex chat to use the plugin. `/plugins`
+opens the plugin browser in an interactive Codex CLI session.
 
 [Codex plugin commands](https://learn.chatgpt.com/docs/developer-commands#codex-plugin)
 and [marketplace sources](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
