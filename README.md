@@ -12,9 +12,10 @@ Cofounder gives your AI agent a foundation for building and running a company:
 shared company knowledge, a roadmap, and tools for research, customer
 relationships, email, social publishing, brand creation, and infrastructure.
 
-Install from this repository to bring Cofounder into **Codex**, **Claude Code**,
-or the **Claude app and Cowork**. The plugin bundles a connection to Cofounder's
-hosted tools and skills for getting started and working on your company.
+Install from this repository to bring Cofounder into **ChatGPT and Codex**,
+**Claude Code**, or the **Claude app and Cowork**. The plugin bundles a
+connection to Cofounder's hosted tools and skills for getting started and
+working on your company.
 [Explore what you can do](plugins/cofounder/README.md).
 
 GitHub marketplace installs include both `get-started` and
@@ -28,13 +29,59 @@ core guides ongoing company work and points to hosted guides.
 
 ## Install in a desktop app
 
-This repository is public. You can download the plugin without a GitHub account
-or repository access request. Using company tools requires Cofounder sign-in
-and consent.
+This repository is public. Downloading the plugin doesn't require a GitHub
+account, though a ChatGPT workspace import requires a GitHub connection.
+Using company tools requires Cofounder sign-in and consent.
 
-### Codex desktop app
+### ChatGPT and Codex
 
-**Install through the UI:**
+ChatGPT and Codex share a plugin system. Choose the installation route available
+in your app or workspace. This repository's plugin includes an MCP server, so
+ChatGPT workspace imports are marked **Desktop only**: use the ChatGPT desktop
+app to install and use the imported plugin.
+
+**Ask your agent to help install it:**
+
+```text
+Install the Cofounder plugin from
+https://github.com/General-Intelligence-Company/cofounder-plugin
+in this ChatGPT or Codex environment.
+
+Use the installation tools available here. If I or my workspace admin need
+to complete a step, give the instructions for this environment. Help me
+complete sign-in and consent, verify the plugin is connected, and tell me
+when to start a new chat.
+```
+
+If Cofounder is already available in **Plugins**, open it and choose **Install**
+or the plus button. Complete the connection prompts, then start a new chat.
+Otherwise, add this repository using one of the routes below.
+
+**ChatGPT workspace: import the marketplace**
+
+A workspace admin completes these steps:
+
+1. Open **Admin > Plugins > Add > Import marketplace**.
+2. In **Source**, enter:
+
+   ```text
+   https://github.com/General-Intelligence-Company/cofounder-plugin
+   ```
+
+3. Leave **Path** and **Branch, tag, or commit** empty to use the repository
+   root and default branch.
+4. Select **Import marketplace** and authorize GitHub access when prompted.
+5. Review the import results and make Cofounder available to the intended
+   workspace members.
+6. In the ChatGPT desktop app, open **Plugins**, install **Cofounder**, and
+   complete its sign-in and consent prompts. Start a new chat to use it.
+
+If you don't have the import controls, ask your workspace admin to import it.
+
+[ChatGPT and Codex plugins](https://developers.openai.com/codex/plugins) ·
+[Workspace marketplace imports](https://learn.chatgpt.com/docs/enterprise/plugin-management).
+
+**Local Codex: add the marketplace**
 
 1. Open **Plugins** in the Codex desktop app.
 2. Choose **Add > Add a marketplace**.
@@ -53,27 +100,10 @@ and consent.
    to use the plugin. If a prompt offers to set up a cloud environment, use a
    local chat instead.
 
-**Ask Codex to install it (macOS and Linux):** paste this into a local Codex
-chat with shell access and a current Codex CLI available:
-
-```text
-Install the Cofounder plugin from
-https://github.com/General-Intelligence-Company/cofounder-plugin
-in my local Codex setup.
-
-Run these supported commands:
-codex plugin marketplace add General-Intelligence-Company/cofounder-plugin
-codex plugin add cofounder@cofounder
-codex plugin list --json
-
-Verify that cofounder@cofounder is installed and enabled. If sign-in or
-consent is needed, tell me how to complete it. Tell me when to start a
-new chat to use the plugin.
-```
-
-Codex can perform the installation through its shell tools. Complete any
-approval, sign-in, or consent prompts your setup presents. If the CLI is
-unavailable or shell access is restricted, use the UI steps above.
+On macOS and Linux, a local agent with shell access and a current Codex CLI
+can also run the [CLI commands](#install-from-the-command-line-for-agents).
+Those commands configure local Codex; they don't import the plugin into a
+ChatGPT workspace.
 
 On Windows, the Codex sandbox can't write Codex settings or fetch from GitHub,
 so use the UI steps above or run the
@@ -147,6 +177,10 @@ this repository, run a local server, or copy MCP configuration by hand.
 
 ## Keep the desktop plugin updated
 
+**ChatGPT workspace:** an admin can open **Admin > Plugins > Marketplaces**,
+select the Cofounder marketplace, and choose **Sync now**. Start a new chat
+after the update.
+
 **Codex:** open the plugin settings, find the **Cofounder** marketplace, and
 choose **Upgrade marketplace**. Check Cofounder in the plugin directory and
 start a new chat afterward.
@@ -158,8 +192,12 @@ Cowork task to load updated components.
 ## Troubleshooting
 
 - **Plugin missing:** adding a marketplace makes its plugins discoverable;
-  you still need to install Cofounder. The install identifier is
+  you still need to install Cofounder. For a ChatGPT workspace import, your
+  admin must also make it available to you. For command-line installs, the identifier is
   `cofounder@cofounder`: plugin name first, marketplace name second.
+- **ChatGPT says the plugin is desktop only:** open the ChatGPT desktop app
+  to install and use it. This is the restriction for imported MCP plugins,
+  including plugins that connect to a hosted server.
 - **Command missing:** update your Codex or Claude Code client if it doesn't
   recognize the [CLI commands below](#install-from-the-command-line-for-agents).
 - **Tools unavailable** (for example, "onboarding_get isn't available"): confirm
