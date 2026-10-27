@@ -2,7 +2,7 @@
   "mcpServers": {
     "cofounder": {
       "type": "http",
-      "url": "https://api.superoptimizers.cofounder.co/mcp/openai"
+      "url": "https://api.cofounder.co/mcp"
     }
   }
 }

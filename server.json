@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.General-Intelligence-Company/cofounder-plugin",
+  "title": "Cofounder",
+  "description": "Shared company context, resources, and tools for your agent to run a company.",
+  "version": "0.1.18",
+  "websiteUrl": "https://cofounder.co",
+  "repository": {
+    "url": "https://github.com/General-Intelligence-Company/cofounder-plugin",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.cofounder.co/mcp"
+    }
+  ]
+}

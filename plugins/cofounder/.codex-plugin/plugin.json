@@ -1,6 +1,6 @@
 {
   "name": "cofounder",
-  "version": "0.1.14",
+  "version": "0.1.18",
   "description": "Use Cofounder to give your agent a foundation for running a company. It brings together shared business knowledge and tools for research, customer relationships, email, social publishing, brand creation, and company infrastructure.",
   "author": {
     "name": "General Intelligence Company",
@@ -37,7 +37,9 @@
     "privacyPolicyURL": "https://cofounder.co/privacy-policy",
     "termsOfServiceURL": "https://cofounder.co/terms",
     "defaultPrompt": [
-      "Connect Cofounder and set up my company in this chat."
+      "Show my company's inbox and draft replies to anything waiting on me.",
+      "Find 20 seed-stage fintech founders and add them to my CRM.",
+      "What did my company spend this week, and on what?"
     ],
     "brandColor": "#947122",
     "brandColorDark": "#D9B85B",

@@ -12,204 +12,133 @@ Cofounder gives your AI agent a foundation for building and running a company:
 shared company knowledge, a roadmap, and tools for research, customer
 relationships, email, social publishing, brand creation, and infrastructure.
 
-Install from this repository to bring Cofounder into **Codex**, **Claude Code**,
-or the **Claude app and Cowork**. The plugin bundles a connection to Cofounder's
-hosted tools and skills for getting started and working on your company.
-[Explore what you can do](plugins/cofounder/README.md).
+Use it in **ChatGPT, Codex, or Claude**.
+[Explore the tools](plugins/cofounder/README.md).
 
-GitHub marketplace installs include both `get-started` and
-`cofounder-company-work`. In enabled Codex and Claude Code sessions, their names
-and descriptions are available without a manual resource search, subject to
-host context limits. Full instructions load when selected; selection is not
-guaranteed. The setup launcher loads hosted onboarding instructions, while the
-core guides ongoing company work and points to hosted guides.
-[Codex skill discovery](https://learn.chatgpt.com/docs/build-skills) ·
-[Claude Code plugin discovery](https://code.claude.com/docs/en/plugins#what-an-enabled-plugin-adds-to-your-sessions).
+## Install
 
-## Install in a desktop app
+Follow the steps for your app, then sign in to Cofounder.
 
-This repository is public. You can download the plugin without a GitHub account
-or repository access request. Using company tools requires Cofounder sign-in
-and consent.
+### ChatGPT and Codex
 
-### Codex desktop app
+1. Open **Plugins** and search for **Cofounder**.
+2. Choose **Install** or the plus button, then sign in when prompted.
+3. Start a new chat to use the plugin.
 
-**Install through the UI:**
+**Not listed?** In Codex, add the marketplace below. In a ChatGPT workspace,
+ask an admin to import it. This import requires the **ChatGPT desktop app**
+to install and use the plugin.
 
-1. Open **Plugins** in the Codex desktop app.
-2. Choose **Add > Add a marketplace**.
-3. In **Source**, enter:
+**Using a personal ChatGPT account?** The workspace import steps below don't
+apply. If Cofounder isn't in your Plugins directory,
+[contact support](https://cofounder.co/support) for help.
 
-   ```text
-   General-Intelligence-Company/cofounder-plugin
-   ```
+<details>
+<summary>Add the marketplace to ChatGPT</summary>
 
-4. Leave **Git ref** and **Sparse paths** empty, then select **Add marketplace**.
-5. Select the **Cofounder** marketplace, open **Cofounder**, and choose
-   **Install**.
-6. Complete the Cofounder connection prompts, including sign-in and consent.
-   If sign-in didn't appear or didn't finish, open **Plugins > Cofounder** and
-   choose **Authenticate** on its MCP server. Then start a new **local** chat
-   to use the plugin. If a prompt offers to set up a cloud environment, use a
-   local chat instead.
+A workspace admin completes these steps:
 
-**Ask Codex to install it (macOS and Linux):** paste this into a local Codex
-chat with shell access and a current Codex CLI available:
+1. Open **Admin > Plugins > Add > Import marketplace**.
+2. Set **Source** to `https://github.com/General-Intelligence-Company/cofounder-plugin`.
+3. Leave **Path** and **Branch, tag, or commit** empty, then select
+   **Import marketplace** and connect GitHub when prompted.
+4. Make Cofounder available to workspace members. They can then install it
+   from **Plugins** in the ChatGPT desktop app and sign in.
 
-```text
-Install the Cofounder plugin from
-https://github.com/General-Intelligence-Company/cofounder-plugin
-in my local Codex setup.
+[OpenAI's import guide](https://learn.chatgpt.com/docs/enterprise/plugin-management).
 
-Run these supported commands:
-codex plugin marketplace add General-Intelligence-Company/cofounder-plugin
-codex plugin add cofounder@cofounder
-codex plugin list --json
+</details>
 
-Verify that cofounder@cofounder is installed and enabled. If sign-in or
-consent is needed, tell me how to complete it. Tell me when to start a
-new chat to use the plugin.
-```
+<details>
+<summary>Add the marketplace to local Codex</summary>
 
-Codex can perform the installation through its shell tools. Complete any
-approval, sign-in, or consent prompts your setup presents. If the CLI is
-unavailable or shell access is restricted, use the UI steps above.
+1. Open **Plugins > Add > Add a marketplace**.
+2. Set **Source** to `General-Intelligence-Company/cofounder-plugin`.
+3. Leave **Git ref** and **Sparse paths** empty, then select **Add marketplace**.
+4. Open **Cofounder**, choose **Install**, and sign in when prompted.
+   Start a new **local** chat to use it.
 
-On Windows, the Codex sandbox can't write Codex settings or fetch from GitHub,
-so use the UI steps above or run the
-[CLI commands](#install-from-the-command-line-for-agents) in your own
-PowerShell window.
+You can also use the [CLI commands below](#install-from-the-command-line-for-agents).
+These configure local Codex; they don't import the plugin into a ChatGPT workspace.
+
+</details>
 
 ### Claude desktop app and Cowork
 
-**Ask Claude Code to install it:** paste this into a local Claude Code session
-(including the desktop app's **Code** tab) with shell access and a current
-Claude Code CLI available:
+1. Open **Customize > Plugins**. For Cowork, open the **Cowork** tab first.
+2. Choose **Add > Add marketplace > Add from a repository**.
+3. Enter `https://github.com/General-Intelligence-Company/cofounder-plugin` and select **Sync**.
+4. Open **Cofounder** and choose **Add** or **Install**.
+5. Open its **Connectors** tab, connect Cofounder, and sign in.
+   Start a new conversation or Cowork task.
+
+[Claude's installation guide](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
+For Claude Code, use the [CLI commands below](#install-from-the-command-line-for-agents).
+Installing through the CLI doesn't add the plugin to your Claude app account.
+
+<details>
+<summary>Optional: ask your agent to help with installation</summary>
 
 ```text
-Install the Cofounder plugin from
+Help me install the Cofounder plugin in this app:
 https://github.com/General-Intelligence-Company/cofounder-plugin
-in my local Claude Code setup.
-
-Run these supported commands:
-claude plugin marketplace add General-Intelligence-Company/cofounder-plugin
-claude plugin install cofounder@cofounder --scope user
-claude plugin list --json
-
-Verify that cofounder@cofounder is installed and enabled. If sign-in or
-consent is needed, tell me how to complete it through /mcp. Tell me
-whether to reload plugins or start a new session to use the plugin.
+Then help me connect my Cofounder account.
 ```
 
-This installs into Claude Code on your machine. For Claude **Chat** or
-**Cowork**, use the UI steps below to add the plugin to your Claude account;
-a Claude Code CLI installation doesn't sync back to that account.
+Your agent may guide you through the steps rather than install it directly.
 
-**Install through the UI:**
-
-1. Open **Customize > Plugins** in Claude. For Cowork, open the **Cowork** tab
-   first, then **Customize**.
-2. Choose **Add > Add marketplace > Add from a repository**.
-3. Enter this repository URL and select **Sync**:
-
-   ```text
-   https://github.com/General-Intelligence-Company/cofounder-plugin
-   ```
-
-4. Open **Cofounder** in the added marketplace and select **Add** or **Install**.
-5. Open the plugin's **Connectors** tab and connect Cofounder, completing
-   sign-in and consent. Start a new conversation or Cowork task.
-
-Use the repository's main URL above, without `/tree/main`, a subfolder, or a
-`.git` suffix. Your organization may control which marketplaces you can add.
-
-Plugins installed in the Claude app are saved to your account. They also sync
-to Claude Code when you sign in with the same Claude account on a version that
-supports account plugin sync (v2.1.273 or later).
-
-[Claude app installation documentation](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
+</details>
 
 ## Get started
 
-After connecting, ask:
+Once connected, ask:
 
 > Help me get started with Cofounder.
 
-Your agent can help you choose or create a company and find the next step on
-its roadmap. Then try:
+Your agent will help you choose or create a company and find the next step.
+Then try: **“Show me our roadmap and help me with the next milestone.”**
 
-- "Show me our company roadmap and help me with the next milestone."
-- "Find our product brief in the Library and draft a launch email from it."
-- "Read recent company events and summarize what's finished and what's blocked."
+## Need help?
 
-The plugin connects to Cofounder's production service. You don't need to clone
-this repository, run a local server, or copy MCP configuration by hand.
+[Contact support](https://cofounder.co/support), or check the fixes below.
 
-## Keep the desktop plugin updated
+<details>
+<summary>Troubleshooting</summary>
 
-**Codex:** open the plugin settings, find the **Cofounder** marketplace, and
-choose **Upgrade marketplace**. Check Cofounder in the plugin directory and
-start a new chat afterward.
+- **Tools aren't available?** Finish signing in, then start a new chat. In
+  Codex, open **Plugins > Cofounder > Authenticate**. In Claude Code, use `/mcp`;
+  in the Claude app, open the plugin's **Connectors** tab.
+- **ChatGPT says “Desktop only”?** Open the ChatGPT desktop app to install and
+  use this imported plugin.
+- **Codex asks for a cloud environment?** Start a local chat; cloud environments
+  don't carry your local plugin sign-in.
+- **Windows install error** (`SEC_E_NO_CREDENTIALS`, “access denied,” or missing
+  home directory)? Use the Plugins UI or run the CLI commands in your own
+  PowerShell window.
 
-**Claude app and Cowork:** use **Check for updates** on the marketplace. You can
-also enable **Sync automatically** for this GitHub marketplace. Start a new
-Cowork task to load updated components.
+</details>
 
-## Troubleshooting
+<details>
+<summary>Keep the plugin updated</summary>
 
-- **Plugin missing:** adding a marketplace makes its plugins discoverable;
-  you still need to install Cofounder. The install identifier is
-  `cofounder@cofounder`: plugin name first, marketplace name second.
-- **Command missing:** update your Codex or Claude Code client if it doesn't
-  recognize the [CLI commands below](#install-from-the-command-line-for-agents).
-- **Tools unavailable** (for example, "onboarding_get isn't available"): confirm
-  the plugin is enabled and Cofounder is signed in and connected. In Codex, open
-  **Plugins > Cofounder** and choose **Authenticate** (or run `codex mcp login`).
-  In Claude Code, use `/mcp`; in the Claude app, use the plugin's **Connectors**
-  tab. Complete any outstanding sign-in or consent prompts, then start a new
-  chat.
-- **Windows: "access denied", missing home directory, or `SEC_E_NO_CREDENTIALS`
-  during install:** these come from the Codex sandbox, not the plugin. Install
-  from the Plugins UI or run the commands in your own PowerShell window.
-- **Cloud environment popup after install:** use a local chat. Cloud
-  environments don't carry local plugin sign-in.
-- **Marketplace blocked:** check your organization's plugin policy. A company
-  administrator may need to allow this source.
+- **ChatGPT workspace:** an admin opens **Admin > Plugins > Marketplaces**,
+  selects Cofounder, and chooses **Sync now**.
+- **Codex:** choose **Upgrade marketplace** for Cofounder in plugin settings.
+- **Claude app and Cowork:** choose **Check for updates** on the marketplace.
 
-## Source and releases
+Start a new chat or task after updating.
 
-This repository is generated from the `production` plugin source in
-[Superoptimizers](https://github.com/General-Intelligence-Company/superoptimizers).
-It contains catalogs for both hosts and a shared bundle under
-[`plugins/cofounder/`](plugins/cofounder/). Both marketplace names and the
-plugin name are `cofounder`.
+</details>
 
-Versions and plugin content are authored in Superoptimizers. Release
-provenance is recorded in [`publication.json`](publication.json).
-Publication also regenerates this README from
-[`scripts/export_cofounder_plugin_repository.py`](https://github.com/General-Intelligence-Company/superoptimizers/blob/main/scripts/export_cofounder_plugin_repository.py),
-so lasting README changes must be made in that source template.
-
-## Documentation and support
-
-See [Cofounder documentation](https://docs.cofounder.co/),
-[support](https://cofounder.co/support), and the
-[privacy policy](https://cofounder.co/privacy-policy).
-This plugin is proprietary software; see [LICENSE](LICENSE) and the
-[Terms of Service](https://cofounder.co/terms).
+<details>
+<summary>Command-line installation</summary>
 
 ## Install from the command line (for agents)
 
-An agent with shell access can run the commands below to install Cofounder
-into Codex or Claude Code on this machine. Use the commands for the host you're
-configuring. These are terminal commands, so they also work from a setup
-script or another agent's shell tool.
+Run these in your terminal. On Windows, use your own PowerShell window if an
+agent's sandbox blocks installation. Update the client if a command is missing.
 
-Both the plugin and marketplace are named `cofounder`; the install identifier
-is `cofounder@cofounder`. Register the marketplace, install the plugin, then
-check the installed-plugin list.
-
-### Codex CLI
+**Codex**
 
 ```sh
 codex plugin marketplace add General-Intelligence-Company/cofounder-plugin
@@ -217,16 +146,10 @@ codex plugin add cofounder@cofounder
 codex plugin list
 ```
 
-Run these in your own terminal (PowerShell on Windows), not through an agent's
-sandboxed shell. Confirm Cofounder appears in the installed list. If sign-in
-didn't complete, run `codex mcp login` for the Cofounder server (use the name
-shown by `codex mcp list`). Start a new Codex chat to use the plugin. `/plugins`
-opens the plugin browser in an interactive Codex CLI session.
+If sign-in didn't finish, run `codex mcp list`, then `codex mcp login` with the
+Cofounder server name it shows. Start a new chat afterward.
 
-[Codex plugin commands](https://learn.chatgpt.com/docs/developer-commands#codex-plugin)
-and [marketplace sources](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
-
-### Claude Code CLI
+**Claude Code**
 
 ```sh
 claude plugin marketplace add General-Intelligence-Company/cofounder-plugin
@@ -234,48 +157,28 @@ claude plugin install cofounder@cofounder --scope user
 claude plugin list
 ```
 
-Confirm Cofounder appears in the installed list. Start Claude Code, run `/mcp`,
-select Cofounder's server, and complete its browser sign-in flow. User scope
-makes the plugin available across projects on this machine. This installation
-doesn't add the plugin to your Claude app account.
+Run `/mcp` in Claude Code to sign in, then start a new session.
 
-In an interactive Claude Code session, the equivalent installation flow is:
+[Codex commands](https://learn.chatgpt.com/docs/developer-commands#codex-plugin) ·
+[Claude Code commands](https://code.claude.com/docs/en/plugins/install).
 
-```text
-/plugin marketplace add General-Intelligence-Company/cofounder-plugin
-/plugin install cofounder@cofounder
-```
+</details>
 
-Choose **Install for you** in the plugin details. Follow the install summary if
-it asks you to reload plugins.
+<details>
+<summary>Source and releases</summary>
 
-[Claude Code plugin commands](https://code.claude.com/docs/en/plugins/install)
-and [MCP authentication](https://code.claude.com/docs/en/mcp#authenticate-with-remote-mcp-servers).
+Plugin files come from the production source in
+[Superoptimizers](https://github.com/General-Intelligence-Company/superoptimizers).
+Both marketplace names and the plugin name are `cofounder`.
+Release provenance is recorded in [`publication.json`](publication.json).
 
-### Connection and activation
+Publication also regenerates this README from
+[`scripts/export_cofounder_plugin_repository.py`](https://github.com/General-Intelligence-Company/superoptimizers/blob/main/scripts/export_cofounder_plugin_repository.py).
+Make lasting README changes in that source template.
 
-Installing the bundle and authorizing access to a company are separate steps.
-If sign-in or consent is required, hand the connection flow to the account
-owner. Start a fresh chat or session after installation so the host loads the
-new skills and tools.
+</details>
 
-### Update from the command line
-
-For Codex, refresh the marketplace and install its current plugin version:
-
-```sh
-codex plugin marketplace upgrade cofounder
-codex plugin add cofounder@cofounder
-```
-
-For Claude Code, refresh the listing and update the installed plugin:
-
-```sh
-claude plugin marketplace update cofounder
-claude plugin update cofounder@cofounder
-```
-
-Start a new session afterward. In Claude Code, `/reload-plugins` can apply the
-update to an open session. Auto-update is off by default for third-party
-marketplaces; enable it through **/plugin > Marketplaces > cofounder > Enable
-auto-update** if desired.
+[Documentation](https://docs.cofounder.co/) ·
+[Privacy](https://cofounder.co/privacy-policy) ·
+[Terms](https://cofounder.co/terms).
+This plugin is proprietary software; see [LICENSE](LICENSE).

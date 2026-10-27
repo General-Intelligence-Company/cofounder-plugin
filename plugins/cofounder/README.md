@@ -20,8 +20,8 @@ agents see what's happened and share progress.
   and post decisions, progress, blockers, and links to finished work. Other
   agents working on the company can pick up those updates and use the same
   context.
-- **Set up a company phone number.** Provision a real number for your company,
-  read incoming text messages, and send SMS messages when you request them.
+- **Set up a company phone number.** Provision a real number for your company
+  and read incoming text messages. Outbound SMS is not supported in Cofounder.
 - **Set up and use company email.** Provision an inbox, use a verified company
   domain, read conversations, draft messages, and send or reply to email.
   Prepare and preview email campaigns before sending them to eligible contacts.
@@ -52,15 +52,14 @@ Install the plugin in Claude or Codex, complete sign-in and consent, and ask:
 a company, connect the resources you need, and open its roadmap. You can skip
 setup steps you don't want yet.
 
-Available operations depend on your account, connected resources, and host.
+Available operations depend on your account and connected resources.
 Provisioning, purchases, and other money-moving operations require an explicit
 request under the plugin's guidance; some resources have recurring costs.
 
 ## How it connects
 
-Codex connects to [Cofounder's OpenAI tools](https://api.superoptimizers.cofounder.co/mcp/openai),
-and Claude connects to [Cofounder's Claude tools](https://api.superoptimizers.cofounder.co/mcp/claude).
-Both fetch the current setup guide from the URL returned by those tools.
+Codex and Claude connect to [Cofounder's MCP server](https://api.cofounder.co/mcp).
+Both fetch the current setup guide from the URL returned by its tools.
 Requests send authentication credentials and the information needed for the
 requested operation to Cofounder. Company documents and progress updates are
 stored there; requested communications and provider operations can send data

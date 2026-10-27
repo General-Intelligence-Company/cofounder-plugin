@@ -1,8 +1,7 @@
 {
   "name": "cofounder",
-  "displayName": "Cofounder",
-  "version": "0.1.14",
-  "description": "Build and run a company",
+  "version": "0.1.18",
+  "description": "Give your agent a foundation for running a company: shared context and tools for research, CRM, email, social publishing, and brand.",
   "author": {
     "name": "General Intelligence Company",
     "url": "https://cofounder.co"
@@ -16,5 +15,5 @@
     "claude",
     "mcp"
   ],
-  "mcpServers": "./.mcp.claude.json"
+  "mcpServers": "./.mcp.json"
 }
