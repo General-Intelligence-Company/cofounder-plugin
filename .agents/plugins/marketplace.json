@@ -7,12 +7,10 @@
     {
       "name": "cofounder",
       "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/General-Intelligence-Company/cofounder-plugin.git",
-        "path": "./plugins/cofounder",
-        "ref": "main"
+        "source": "local",
+        "path": "./plugins/cofounder"
       },
-      "version": "0.1.21",
+      "version": "0.1.22",
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"

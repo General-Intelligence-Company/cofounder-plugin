@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cofounder",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "Build and run your company with shared context, a roadmap, and tools for research, CRM, email, and launches.",
   "author": {
     "name": "General Intelligence Company",
