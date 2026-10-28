@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="plugins/cofounder/assets/directory-icon.png" alt="Cofounder sunflower" width="96" height="96">
+  <img src="plugins/cofounder/assets/directory-icon.png" alt="Cofounder sunflower" width="96">
 </p>
 
 <h1 align="center">Cofounder Plugin</h1>
@@ -8,11 +8,11 @@
   <a href="https://cofounder.co">cofounder.co</a>
 </p>
 
-Cofounder gives your AI agent a foundation for building and running a company:
-shared company knowledge, a roadmap, and tools for research, customer
-relationships, email, social publishing, brand creation, and infrastructure.
+Build and run your company from your agent. Cofounder gives it shared company
+knowledge, a roadmap, and tools for research, customer relationships, email,
+social publishing, brand creation, and infrastructure.
 
-Use it in **ChatGPT, Codex, or Claude**.
+Start with setup, then keep working with the same company context across tasks.
 [Explore the tools](plugins/cofounder/README.md).
 
 ## Install
@@ -75,6 +75,38 @@ These configure local Codex; they don't import the plugin into a ChatGPT workspa
 [Claude's installation guide](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
 For Claude Code, use the [CLI commands below](#install-from-the-command-line-for-agents).
 Installing through the CLI doesn't add the plugin to your Claude app account.
+
+### Cursor
+
+Team marketplace admins can import this repository through
+**Dashboard > Plugins & MCPs**, then make Cofounder available to their team.
+Install Cofounder from that marketplace and connect its MCP server to sign in.
+
+The repository includes a Cursor marketplace and plugin manifest, as well as
+the portable Agent Plugins format. Public marketplace availability requires
+a separate submission and review.
+
+[Cursor plugin installation](https://cursor.com/docs/plugins).
+
+### Grokbot
+
+Grokbot can use the same plugin after it is available in its plugin catalog.
+Until then, ask your Bot:
+
+> Add the Cofounder MCP server at https://api.cofounder.co/mcp, then help me get started
+> with Cofounder.
+
+Complete the native connection and sign-in prompts, then send another message
+if the new tools are not available yet. No API key is bundled with the plugin.
+
+### Other MCP clients
+
+Add `https://api.cofounder.co/mcp` as a remote **Streamable HTTP** server with
+**OAuth** authentication, then sign in to Cofounder. Ask your agent:
+**“Help me get started with Cofounder.”**
+
+[Agent installation guide](https://app.cofounder.co/install.md) ·
+[Official MCP Registry listing](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.General-Intelligence-Company%2Fcofounder-plugin/versions/latest).
 
 <details>
 <summary>Optional: ask your agent to help with installation</summary>
@@ -169,7 +201,7 @@ Run `/mcp` in Claude Code to sign in, then start a new session.
 
 Plugin files come from the production source in
 [Superoptimizers](https://github.com/General-Intelligence-Company/superoptimizers).
-Both marketplace names and the plugin name are `cofounder`.
+All three marketplace names and the plugin name are `cofounder`.
 Release provenance is recorded in [`publication.json`](publication.json).
 
 Publication also regenerates this README from
@@ -181,4 +213,5 @@ Make lasting README changes in that source template.
 [Documentation](https://docs.cofounder.co/) ·
 [Privacy](https://cofounder.co/privacy-policy) ·
 [Terms](https://cofounder.co/terms).
-This plugin is proprietary software; see [LICENSE](LICENSE).
+The plugin package is open source under the [MIT License](LICENSE).
+The hosted Cofounder service is governed by its [Terms of Service](https://cofounder.co/terms).

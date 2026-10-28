@@ -1,0 +1,26 @@
+{
+  "name": "cofounder",
+  "version": "0.1.20",
+  "description": "Build and run your company with shared context, a roadmap, and tools for research, CRM, email, and launches.",
+  "homepage": "https://cofounder.co",
+  "repository": "https://github.com/General-Intelligence-Company/cofounder-plugin",
+  "license": "MIT",
+  "keywords": [
+    "cofounder",
+    "company",
+    "startup",
+    "agents",
+    "mcp",
+    "crm",
+    "email",
+    "research",
+    "roadmap"
+  ],
+  "author": {
+    "name": "General Intelligence Company"
+  },
+  "displayName": "Cofounder",
+  "logo": "./assets/directory-icon.png",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

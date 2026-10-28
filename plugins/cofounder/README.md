@@ -1,6 +1,6 @@
 # Cofounder
 
-Cofounder gives Claude and Codex tools to build and run your company. Bring
+Build and run your company from your agent. Bring
 company knowledge, communications, customer records, and launch resources
 into the same conversation, then ask your agent to move the work forward.
 
@@ -47,7 +47,7 @@ agents see what's happened and share progress.
 
 ## Get started
 
-Install the plugin in Claude or Codex, complete sign-in and consent, and ask:
+Install Cofounder in your desktop agent, complete sign-in and consent, and ask:
 “Help me get started with Cofounder.” Your agent will help you choose or create
 a company, connect the resources you need, and open its roadmap. You can skip
 setup steps you don't want yet.
@@ -58,8 +58,9 @@ request under the plugin's guidance; some resources have recurring costs.
 
 ## How it connects
 
-Codex and Claude connect to [Cofounder's MCP server](https://api.cofounder.co/mcp).
-Both fetch the current setup guide from the URL returned by its tools.
+The plugin connects your agent to [Cofounder's hosted MCP server](https://api.cofounder.co/mcp).
+Its setup skill loads the current onboarding guide from the URL returned by
+Cofounder.
 Requests send authentication credentials and the information needed for the
 requested operation to Cofounder. Company documents and progress updates are
 stored there; requested communications and provider operations can send data
@@ -68,7 +69,8 @@ updates exclude chat transcripts, unrelated personal information, and secrets
 under the bundled guidance.
 
 When your host has a shell and local project access, requested work can also
-use the Cofounder CLI, filesystem, and Git. The bundle includes a small setup launcher, a core skill for company work,
+use the Cofounder CLI, filesystem, and Git. The bundle includes a small setup
+launcher, a core skill for company work,
 and a Claude company-status agent, with no install scripts,
 hooks, or local server process.
 
@@ -78,5 +80,6 @@ See the [documentation](https://docs.cofounder.co/),
 [privacy policy](https://cofounder.co/privacy-policy), and
 [support](https://cofounder.co/support) for more information.
 
-This plugin is proprietary software. See [LICENSE](LICENSE) and the
+The plugin package is open source under the [MIT License](LICENSE).
+The hosted Cofounder service is governed by its
 [Terms of Service](https://cofounder.co/terms).

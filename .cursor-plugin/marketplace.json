@@ -1,0 +1,16 @@
+{
+  "name": "cofounder",
+  "owner": {
+    "name": "General Intelligence Company"
+  },
+  "metadata": {
+    "description": "Cofounder plugin for Cursor and Grokbot."
+  },
+  "plugins": [
+    {
+      "name": "cofounder",
+      "source": "./plugins/cofounder",
+      "category": "productivity"
+    }
+  ]
+}

@@ -2,9 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.General-Intelligence-Company/cofounder-plugin",
   "title": "Cofounder",
-  "description": "Shared company context, resources, and tools for your agent to run a company.",
-  "version": "0.1.18",
+  "description": "Company context and tools for research, CRM, email, social publishing, and roadmaps.",
+  "version": "0.1.20",
   "websiteUrl": "https://cofounder.co",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/General-Intelligence-Company/cofounder-plugin/main/plugins/cofounder/assets/directory-icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "2369x2141"
+      ]
+    }
+  ],
   "repository": {
     "url": "https://github.com/General-Intelligence-Company/cofounder-plugin",
     "source": "github"
