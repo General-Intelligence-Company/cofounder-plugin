@@ -1,8 +1,8 @@
 {
   "environment": "production",
   "repository": "General-Intelligence-Company/cofounder-plugin",
-  "source_sha": "63edb5e927eaea4b1163ef0f1c5871c127a61b36",
-  "version": "0.1.20",
-  "workflow_url": "https://github.com/General-Intelligence-Company/superoptimizers/actions/runs/40762201758",
-  "payload_sha256": "fd8de564857dd4f65ff9f91e0644612cc3f7ae06f637310ab8a20015c4a9fa1b"
+  "source_sha": "ee6d4b575026a9ed4cfb9fd6b3d7fe0f94669255",
+  "version": "0.1.21",
+  "workflow_url": "https://github.com/General-Intelligence-Company/superoptimizers/actions/runs/40772378299",
+  "payload_sha256": "779c99299699cc2a3b9fa1a948abed6291d58dd5bbd655046c5891bbfbd2193d"
 }

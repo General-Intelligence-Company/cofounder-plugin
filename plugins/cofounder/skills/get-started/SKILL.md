@@ -7,4 +7,4 @@ description: Load Cofounder's current hosted setup guide when the user chooses S
 
 1. Call `onboarding_get` with `{}`.
 2. Fetch the returned `mcp_skill_url` and follow its current instructions.
-3. If `onboarding_get` is unavailable, Cofounder is not signed in yet. Fetch https://app.cofounder.co/mcp-onboarding/skill.md and follow it.
+3. If `onboarding_get` is unavailable, the connection may need to be added, enabled, or signed in. Fetch https://app.cofounder.co/mcp-onboarding/skill.md and follow its host-specific connection steps.
