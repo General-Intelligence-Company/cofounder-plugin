@@ -1,19 +1,19 @@
 {
   "name": "cofounder",
-  "version": "0.1.22",
-  "description": "Build and run your company with shared context, a roadmap, and tools for research, CRM, email, and launches.",
+  "version": "0.1.23",
+  "description": "Run your company from your AI assistant: shared knowledge, customers, email, social publishing, research, and app launches.",
   "homepage": "https://cofounder.co",
   "repository": "https://github.com/General-Intelligence-Company/cofounder-plugin",
   "license": "MIT",
   "keywords": [
-    "cofounder",
     "company",
+    "business",
     "startup",
-    "agents",
-    "mcp",
     "crm",
     "email",
+    "social-media",
     "research",
+    "app-development",
     "roadmap"
   ],
   "author": {

@@ -8,9 +8,9 @@
       "name": "cofounder",
       "source": {
         "source": "local",
-        "path": "./plugins/cofounder"
+        "path": "./plugins/cofounder-codex"
       },
-      "version": "0.1.22",
+      "version": "0.1.23",
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"

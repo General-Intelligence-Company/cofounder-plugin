@@ -45,7 +45,7 @@ Use this task map to choose a guide, then read it before starting that workflow:
 - Importing an existing GitHub repository as the product app, or wiring an imported app to Cofounder's hosting, database, and AI Gateway: read [import-existing-repository](skill://import-existing-repository/SKILL.md).
 - Attaching an existing Supabase database: read [import-existing-supabase-database](skill://import-existing-supabase-database/SKILL.md).
 - Setting up Google, GitHub or another provider for app sign-in: read [setup-database-sign-in](skill://setup-database-sign-in/SKILL.md).
-- Local repository work: `cofounder-repo-mcp` through MCP, or `cofounder-repo` through the CLI. Before hand-building auth, billing, brand or dark mode in a repo, list the ready `@cofounder` shadcn items: `npx shadcn@latest search @cofounder`.
+- Local repository work: `cofounder-repo-mcp` through MCP, or `cofounder-repo` through the CLI. Before hand-building auth, billing or dark mode in a repo, list the ready `@cofounder` shadcn items: `npx shadcn@latest search @cofounder`.
 - Finding, sharing, or updating company documents and brand assets: `cofounder-library`.
 - Managing accounts, contacts, and activity history: `cofounder-crm`.
 - Public waitlist or contact forms that save signups to CRM: read the Website forms section of [cofounder-repo-mcp](skill://cofounder-repo-mcp/SKILL.md) for `company_forms_setup` and `@cofounder/waitlist`.

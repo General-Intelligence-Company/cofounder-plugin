@@ -70,9 +70,9 @@ under the bundled guidance.
 
 When your host has a shell and local project access, requested work can also
 use the Cofounder CLI, filesystem, and Git. The bundle includes a small setup
-launcher, a core skill for company work,
-and a Claude company-status agent, with no install scripts,
-hooks, or local server process.
+launcher and a core skill for company work.
+Claude packages also include a company-status agent. No package runs install
+scripts, hooks, or a local server process.
 
 ## Documentation and license
 

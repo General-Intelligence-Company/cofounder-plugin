@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cofounder": {
+      "type": "http",
+      "url": "https://api.cofounder.co/mcp"
+    }
+  }
+}
