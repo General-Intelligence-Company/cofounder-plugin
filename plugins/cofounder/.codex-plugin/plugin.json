@@ -1,6 +1,6 @@
 {
   "name": "cofounder",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "Run your company from your AI assistant: shared knowledge, customers, email, social publishing, research, and app launches.",
   "author": {
     "name": "General Intelligence Company",
@@ -29,7 +29,7 @@
   },
   "interface": {
     "displayName": "Cofounder",
-    "shortDescription": "Your company, connected to your AI assistant",
+    "shortDescription": "Build and run your company from your agent",
     "longDescription": "Bring your company into the AI assistant you already use. Cofounder keeps your plans, documents, customer records, and progress together across conversations. Research opportunities, manage customers, draft and send email, publish social posts, and build and launch your app. Start a new company or pick up an existing one, then work through its roadmap with your assistant. Sign in to connect; the resources and services you choose may have their own costs.",
     "developerName": "General Intelligence Company",
     "category": "Business & Operations",
